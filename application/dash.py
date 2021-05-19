@@ -40,7 +40,7 @@ patabla["Monto"] = [float(str(i).replace(",", "")) for i in patabla["Monto"]]
 
 #   identificadores
 tot_cdmx = patabla.Monto.sum()
-print ("Monto total de Ciudad de México :    ", tot_cdmx)
+#print ("Monto total de Ciudad de México :    ", tot_cdmx)
 
 
 #Por alcaldía abs
