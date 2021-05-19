@@ -1,4 +1,5 @@
 import dash
+import matplotlib.pyplot as plt 
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
@@ -145,9 +146,13 @@ body = html.Div([
     html.Br(),
     html.Br(),
         dbc.Row(
-           [dbc.Col(html.H1("PRUEBA TÉCNICA ANALISTA DE MODELOS"),
-                        width={'offset' : 2}),]),
- 
+           [dbc.Col(html.H1("PRUEBA TÉCNICA ANALISTA DE MODELOS."),
+                        width={'offset' : 2})]),
+        dbc.Row(
+           [
+            dbc.Col(html.H3("breve analisis de la Ciudad de México. por Aeelen Miranda"),
+                   width={'offset' : 2}),]),
+  
     dbc.Row(
            [dbc.Col(html.H6(d2),           #Fecha de actualización
                width={'size' : "auto",
@@ -160,8 +165,9 @@ body = html.Div([
      html.Br(),
     html.Br(),
     dbc.Row(
-        [dbc.Col(
-            dbc.Button(([html.P("El monto total de Noviembre 2020 fue de: "), 
+        [
+            
+            dbc.Col(dbc.Button(([html.P("El monto total de Noviembre 2020 fue de: "), 
                  html.P(f"{int(tot_cdmx):,}",  
                         style={
                                "color": "dark", 
@@ -173,8 +179,12 @@ body = html.Div([
        ]),style={ "background-color": "light",
                   "box-shadow": "10px 20px 30px gray",
                   'margin-left': '100px',
-                 } ,disabled=True)
-        )]),
+                 } ,disabled=True)),
+        dbc.Col(html.H4("Las 5 alcaldias con más monto en noviembre 2020 fueron: Gustavo A. Madero (2,145,164,510), "
+                        "Tlalpan (2,089,595,017), Iztacalco (2,039,615,959), Iztapalapa (1,797,280,972), y No distribuido "
+                        "(1,667,490,140)."))
+        ]),
+    
      html.Br(),
      html.Br(),
     html.Br(),
@@ -187,26 +197,56 @@ body = html.Div([
                    width={"size": 6})
         ]),
     #Tabla 
-# #      dbc.Row(
-#               [dbc.Col(dash_table.DataTable(
-#               id='table',
-#           columns=[{"name": i, "id": i} for i in vuelos.columns],
-#           data=vuelos.to_dict('records'),
-#                   fixed_rows={'headers': True,"striped": True,},
-#                   style_table={'height': '300px', 'overflowY': 'auto',"striped": True,},
-#                   style_cell={'fontSize':12, 'font-family':'Nunito Sans',"striped": True,}, 
-#                   style_header = {'border': 'none','fontWeight': 'condensed'},
-#                   style_data = {'border': 'none', "striped": True, },
-#                   style_data_conditional=[{'if': {'row_index': 'odd'},
-#                                            'backgroundColor': 'rgb(248, 248, 248)'}],
-#               ), style={
-#           'margin-top': '9px',
-#           'margin-left': '100px',
-#           'margin-right': '0px',
-#           'width': '750px',
-#                  
-#               }),
-
+       dbc.Row(
+               [dbc.Col(dash_table.DataTable(
+               id='table',
+           columns=[{"name": i, "id": i} for i in tmun.columns],
+           data=tmun.to_dict('records'),
+                   fixed_rows={'headers': True,"striped": True,},
+                   style_table={'height': '300px', 'overflowY': 'auto',"striped": True,},
+                   style_cell={'fontSize':12, 'font-family':'Nunito Sans',"striped": True,}, 
+                   style_header = {'border': 'none','fontWeight': 'condensed'},
+                   style_data = {'border': 'none', "striped": True, },
+                   style_data_conditional=[{'if': {'row_index': 'odd'},
+                                            'backgroundColor': 'rgb(248, 248, 248)'}],
+               ), style={
+           'margin-top': '9px',
+           'margin-left': '100px',
+           'margin-right': '0px',
+           'width': '750px',
+                  
+               })]),
+    
+    html.Br(),
+    html.Br(),
+    html.Br(),
+        
+    html.Br(),
+    html.Br(),
+    html.Br(),
+    dbc.Row([
+        dbc.Col(html.H5("Para el ejercicio #2: Se propone el modelo de regresión lineal múltiple de plotly, "
+                        " Scikit-learn es una biblioteca popular de aprendizaje automático (ML)"
+                        " funciona para predecir las tendencias que en función del valor total."
+                        " Además de la regresión lineal, es posible ajustar los mismos datos utilizando"
+                        " k-Vecinos más cercanos"),
+                style={"color": "black", 
+                            "font-size": "14px",
+                            "font-family": "Arial",   
+                            "background-color": "lightgray"})
+    ], style={"background-color": "lightgray",
+                          "box-shadow": "10px 20px 30px gray",
+                           'width': '1100px',
+                           'margin-left': '100px',
+                           'margin-right': '0px'}),
+        
+    html.Br(),
+    html.Br(),
+    html.Br(),
+        
+    html.Br(),
+    html.Br(),
+    html.Br(),
 ])
 app.layout = html.Div([body])
 
