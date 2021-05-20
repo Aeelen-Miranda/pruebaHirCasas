@@ -179,9 +179,9 @@ body = html.Div([
                   "box-shadow": "10px 20px 30px gray",
                   'margin-left': '100px',
                  } ,disabled=True)),
-        dbc.Col(html.H4("Las 5 alcaldias con más monto en noviembre 2020 fueron: Gustavo A. Madero (2,145,164,510), "
-                        "Tlalpan (2,089,595,017), Iztacalco (2,039,615,959), Iztapalapa (1,797,280,972), y No distribuido "
-                        "(1,667,490,140)."))
+        dbc.Col(html.H4("Las 5 alcaldías que reflejaron más monto en noviembre de 2020 fueron: Álvaro Obregón (1,415,693,516), "
+                        "Benito Juárez (664,855,746), Miguel Hidalgo (503,817,990), Cuauhtémoc (347,362,316), y Coyoacán "
+                        "(293,227,848)."))
         ]),
     
      html.Br(),
