@@ -14,7 +14,6 @@ import sidetable as stb
 import datetime
 from datetime import datetime, timedelta
 from datetime import date
-import geopandas as gpd
 import flask
 import os
 
